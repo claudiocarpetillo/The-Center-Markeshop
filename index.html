@@ -10,21 +10,35 @@
   :root{
     --paper:#FAF6EC;
     --paper-dark:#FFFFFF;
-    --ink:#20281F;
-    --petrol:#1F5C4A;
-    --petrol-dark:#143D31;
-    --brick:#C6811E;
-    --mango:#E0A23D;
-    --line: rgba(32,40,31,0.16);
+    --ink:#1C2230;
+    --petrol:#1B4F72;
+    --petrol-dark:#0F3252;
+    --brick:#C9A227;
+    --mango:#E3C066;
+    --line: rgba(28,34,48,0.18);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    background:
-      radial-gradient(circle at 1px 1px, rgba(32,40,31,0.06) 1px, transparent 0) 0 0/16px 16px,
-      var(--paper);
+    background-color:#BFE0F2;
     color:var(--ink);
     font-family:'Work Sans', sans-serif;
     padding-bottom:60px;
+    position:relative;
+    min-height:100vh;
+  }
+  /* FONDO FIJO — imagen de la Virgen, completa, sin recortes */
+  .hero-bg{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background-color:#BFE0F2;
+    background-image:
+      linear-gradient(180deg, rgba(191,224,242,0.05) 0%, rgba(191,224,242,0.45) 55%, rgba(250,246,236,0.7) 100%),
+      url('logo-virgen.jpg');
+    background-repeat:no-repeat;
+    background-position:center 8%;
+    background-size:contain;
   }
 
   /* HEADER — waybill style */
@@ -32,6 +46,21 @@
     padding:28px 18px 20px;
     max-width:720px; margin:0 auto;
     position:relative;
+  }
+  .brand-logo{
+    width:76px; height:76px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid var(--brick);
+    box-shadow:0 3px 10px rgba(15,50,82,0.25);
+    margin-bottom:12px;
+    background:var(--paper-dark);
+  }
+  .brand-logo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center 22%;
+    display:block;
   }
   .route-line{
     display:flex; align-items:center; gap:8px;
@@ -78,10 +107,12 @@
 
   /* AVISO DE PRECIOS */
   .price-notice{
-    max-width:720px; margin:0 auto 18px; padding:0 18px;
+    max-width:684px; margin:0 auto 18px; padding:0 18px;
     display:flex; align-items:center; gap:10px;
     font-size:12.5px; color:var(--petrol-dark);
-    background:rgba(31,92,74,0.08);
+    background:rgba(255,253,248,0.75);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
     border:1.5px dashed var(--petrol);
     padding:10px 14px;
     margin-left:18px; margin-right:18px;
@@ -117,11 +148,14 @@
     max-width:720px; margin:0 auto; padding:0 18px;
   }
   .card{
-    background:var(--paper-dark);
-    border:2px solid var(--ink);
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+    border:2px solid var(--petrol-dark);
     position:relative;
     overflow:hidden;
     display:flex; flex-direction:column;
+    box-shadow:0 3px 12px rgba(15,50,82,0.12);
   }
   .card-img{
     width:100%; aspect-ratio:1/1; object-fit:cover;
@@ -285,9 +319,13 @@
   .cart-send-btn svg{width:16px; height:16px; fill:var(--paper);}
 
   footer{
-    max-width:720px; margin:34px auto 0; padding:20px 18px 0;
+    max-width:684px; margin:34px auto 0; padding:20px 18px 14px;
     border-top:2px dashed var(--line);
     text-align:center;
+    background:rgba(255,253,248,0.6);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    border-radius:4px 4px 0 0;
   }
   footer p{
     font-family:'Space Mono', monospace;
@@ -298,7 +336,10 @@
 </head>
 <body>
 
+<div class="hero-bg" aria-hidden="true"></div>
+
 <header>
+  <div class="brand-logo"><img src="logo-virgen.jpg" alt="Logo The Center Markeshop"></div>
   <div class="route-line">PAGAS EN EE.UU. <span class="dots"></span> ENTREGAMOS EN CUBA</div>
   <h1>The Center<br><span>Markeshop</span></h1>
   <p class="tagline">Elige los artículos que quieras y arma tu propio combo. Te escribimos por WhatsApp para confirmar precios y coordinar la entrega en Cuba.</p>
