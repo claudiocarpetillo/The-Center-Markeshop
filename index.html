@@ -43,17 +43,18 @@
 
   /* HEADER — waybill style */
   header{
-    padding:28px 18px 20px;
+    padding:40px 18px 34px;
     max-width:720px; margin:0 auto;
     position:relative;
+    display:flex;
+    justify-content:center;
   }
   .brand-logo{
-    width:76px; height:76px;
+    width:140px; height:140px;
     border-radius:50%;
     overflow:hidden;
-    border:3px solid var(--brick);
-    box-shadow:0 3px 10px rgba(15,50,82,0.25);
-    margin-bottom:12px;
+    border:4px solid var(--brick);
+    box-shadow:0 4px 16px rgba(15,50,82,0.3);
     background:var(--paper-dark);
   }
   .brand-logo img{
@@ -62,62 +63,7 @@
     object-position:center 22%;
     display:block;
   }
-  .route-line{
-    display:flex; align-items:center; gap:8px;
-    font-family:'Space Mono', monospace;
-    font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--petrol); font-weight:700;
-    margin-bottom:10px;
-  }
-  .route-line .dots{flex:1; border-top:2px dashed var(--line); height:0;}
-  h1{
-    font-family:'Anton', sans-serif;
-    font-size:clamp(38px, 11vw, 54px);
-    letter-spacing:0.5px;
-    line-height:0.95;
-    color:var(--petrol-dark);
-    text-transform:uppercase;
-  }
-  h1 span{color:var(--brick);}
-  .tagline{
-    font-size:14px; color:var(--ink); opacity:0.8;
-    margin-top:8px; max-width:460px;
-    line-height:1.5;
-  }
-  .stamp{
-    position:absolute; top:22px; right:14px;
-    width:82px; height:82px;
-    border:3px solid var(--brick);
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    text-align:center;
-    transform:rotate(9deg);
-    font-family:'Space Mono', monospace;
-    font-size:9px; font-weight:700; text-transform:uppercase;
-    color:var(--brick); letter-spacing:0.5px;
-    line-height:1.3;
-    opacity:0.85;
-  }
-  .stamp::before{
-    content:'';
-    position:absolute; inset:5px;
-    border:1px dashed var(--brick);
-    border-radius:50%;
-  }
-
   /* AVISO DE PRECIOS */
-  .price-notice{
-    max-width:684px; margin:0 auto 18px; padding:0 18px;
-    display:flex; align-items:center; gap:10px;
-    font-size:12.5px; color:var(--petrol-dark);
-    background:rgba(255,253,248,0.75);
-    backdrop-filter:blur(6px);
-    -webkit-backdrop-filter:blur(6px);
-    border:1.5px dashed var(--petrol);
-    padding:10px 14px;
-    margin-left:18px; margin-right:18px;
-  }
-
   /* CARDS — grid 2 columnas */
   .tabs{
     display:flex; gap:8px; padding:4px 18px 16px;
@@ -340,13 +286,7 @@
 
 <header>
   <div class="brand-logo"><img src="logo-virgen.jpg" alt="Logo The Center Markeshop"></div>
-  <div class="route-line">PAGAS EN EE.UU. <span class="dots"></span> ENTREGAMOS EN CUBA</div>
-  <h1>The Center<br><span>Markeshop</span></h1>
-  <p class="tagline">Elige los artículos que quieras y arma tu propio combo. Te escribimos por WhatsApp para confirmar precios y coordinar la entrega en Cuba.</p>
-  <div class="stamp">ENTREGA<br>A DOMICILIO<br>EN CUBA</div>
 </header>
-
-<div class="price-notice">💬 Los precios se confirman por WhatsApp al enviar tu selección — así siempre tienes el valor más actualizado.</div>
 
 <div class="tabs">
   <button class="tab active" data-filter="all">Todos</button>
